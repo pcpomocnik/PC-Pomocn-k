@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kryštof C. – PC Pomocník | Zrychlení PC • Grafika • Doučování</title>
+  <meta name="description" content="Pomohu dětem i rodičům s PC, grafikou a školou. Zrychlení PC, tvorba grafiky, pomoc s prezentacemi a doučování. Kontakt: pcpomocnik932@gmail.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --blue:#0c4a7b; /* tmavší modrá */
+      --blue-light:#2f6fa8;
+      --accent:#27b07a; /* zelený doplněk */
+      --bg:#ffffff;
+      --muted:#6b7280;
+      --maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      margin:0;
+      color:var(--blue);
+      background: linear-gradient(180deg,#f8fbff 0%, #ffffff 100%);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.4;
+    }
+    .container{
+      max-width:var(--maxw);
+      margin:0 auto;
+      padding:28px;
+    }
+
+    /* Header / Nav */
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:12px 0;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+      color:var(--blue);
+    }
+    .logo-mark{
+      width:48px;height:48px;
+      border-radius:8px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(180deg,var(--blue) 0%, var(--blue-light) 100%);
+      box-shadow:0 6px 18px rgba(12,74,123,0.08);
+    }
+    .logo-mark svg{width:28px;height:28px;fill:#fff}
+    .brand h1{font-size:18px;margin:0;font-weight:700;letter-spacing:-0.02em}
+    .brand p{margin:0;font-size:12px;color:var(--muted)}
+
+    nav{display:flex;gap:10px;align-items:center}
+    .btn{
+      display:inline-block;
+      padding:10px 14px;
+      border-radius:10px;
+      font-weight:600;
+      text-decoration:none;
+      cursor:pointer;
+    }
+    .btn-primary{background:var(--accent);color:white}
+    .btn-ghost{background:transparent;border:2px solid rgba(12,74,123,0.08);color:var(--blue)}
+
+    /* Hero */
+    .hero{
+      display:flex;
+      gap:30px;
+      align-items:center;
+      padding:36px 0;
+      flex-wrap:wrap;
+    }
+    .hero-left{flex:1;min-width:280px}
+    .kicker{display:inline-block;background:#e8f7f1;color:var(--blue);padding:6px 10px;border-radius:8px;font-weight:700;margin-bottom:14px}
+    h2{font-size:34px;margin:0 0 12px 0;line-height:1.05}
+    p.lead{color:var(--muted);margin:0 0 18px 0}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}
+    .feature{background:#fff;border-radius:10px;padding:12px;border:1px solid rgba(12,74,123,0.06);display:flex;gap:10px;align-items:center}
+    .feature .ico{width:36px;height:36px;border-radius:8px;display:grid;place-items:center;background:linear-gradient(180deg,var(--blue) 0%, var(--blue-light) 100%);color:#fff}
+
+    /* Right - illustration box */
+    .hero-right{flex:0 0 360px;min-width:260px}
+    .card{
+      background:linear-gradient(180deg,#ffffff 0%, #f2f7ff 100%);
+      border-radius:14px;
+      padding:18px;
+      box-shadow: 0 10px 30px rgba(12,74,123,0.06);
+    }
+    .illu{width:100%;height:220px;border-radius:8px;display:grid;place-items:center;background:linear-gradient(180deg,#eaf4ff,#fff);color:var(--blue-light);font-weight:700}
+
+    /* Services */
+    section.services{padding:36px 0}
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .svc{background:#fff;border-radius:10px;padding:18px;border:1px solid rgba(12,74,123,0.06)}
+    .svc h3{margin:0 0 8px 0;color:var(--blue)}
+    .price{font-weight:700;color:var(--blue);margin-top:10px}
+
+    /* Pricing */
+    .pricing{display:flex;gap:16px;flex-wrap:wrap;margin-top:18px}
+    .plan{flex:1;min-width:200px;border-radius:12px;padding:18px;border:1px solid rgba(12,74,123,0.06);background:linear-gradient(180deg,#fff,#f8fdff)}
+    .plan h4{margin:0 0 8px 0}
+    .plan ul{padding-left:18px;margin:0;color:var(--muted)}
+
+    /* Portfolio / examples */
+    .portfolio{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .thumb{background:linear-gradient(180deg,#f8fbff,#ffffff);border-radius:10px;height:120px;border:1px dashed rgba(12,74,123,0.06);display:grid;place-items:center;color:var(--muted)}
+
+    /* How it works / FAQ */
+    .how{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap}
+    .how .steps{flex:1;min-width:280px}
+    .faq{flex:1;min-width:260px}
+
+    /* Contact footer */
+    footer{border-top:1px solid rgba(12,74,123,0.06);padding:28px 0;margin-top:36px;display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between}
+    .contact-card{display:flex;gap:12px;align-items:center}
+    .mailbox{width:56px;height:56px;border-radius:12px;background:linear-gradient(180deg,var(--blue) 0%, var(--blue-light) 100%);display:grid;place-items:center;color:white}
+    .small{font-size:13px;color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .features{grid-template-columns:repeat(2,1fr)}
+      .services-grid{grid-template-columns:repeat(2,1fr)}
+      .portfolio{grid-template-columns:repeat(2,1fr)}
+      .hero-right{flex-basis:100%}
+      .hero{align-items:flex-start}
+    }
+    @media (max-width:560px){
+      h2{font-size:26px}
+      .features{grid-template-columns:1fr}
+      .services-grid{grid-template-columns:1fr}
+      .portfolio{grid-template-columns:1fr}
+      .hero{gap:16px}
+      .hero-right{order:2}
+    }
+
+    /* small print */
+    .copyright{font-size:13px;color:var(--muted)}
+    a{text-decoration:none;color:inherit}
+    .pill {display:inline-block;background:#f1f7ff;border-radius:999px;padding:6px 10px;color:var(--blue);font-weight:600}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a class="brand" href="#">
+        <span class="logo-mark" aria-hidden="true">
+          <!-- simple cursor icon -->
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 2l14 9-3 1 2 9-13-19z"></path></svg>
+        </span>
+        <div>
+          <h1>Kryštof C.</h1>
+          <p>PC Pomocník — grafika • doučování • PC</p>
+        </div>
+      </a>
+      <nav>
+        <a class="btn btn-ghost" href="#services">Služby</a>
+        <a class="btn btn-ghost" href="#pricing">Ceník</a>
+        <a class="btn btn-primary" href="mailto:pcpomocnik932@gmail.com">Napiš mi</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero" id="home" aria-labelledby="hero-title">
+        <div class="hero-left">
+          <span class="kicker">Pomoc na dosah</span>
+          <h2 id="hero-title">Pomohu dětem i rodičům s PC, grafikou a školou.</h2>
+          <p class="lead">Zrychlení PC, tvorba grafiky, pomoc s prezentacemi a doučování. Levně a spolehlivě – pro děti 8–12 let i jejich rodiče.</p>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="mailto:pcpomocnik932@gmail.com">Kontaktovat mě</a>
+            <a class="btn btn-ghost" href="#pricing">Ceník & balíčky</a>
+          </div>
+
+          <div class="features" aria-hidden="false" style="margin-top:18px">
+            <div class="feature"><div class="ico">🖥️</div><div><strong>Zrychlení PC</strong><div class="small">Vyčistím software, poradím s nastavením</div></div></div>
+            <div class="feature"><div class="ico">🎨</div><div><strong>Grafika</strong><div class="small">Profilovky, bannery, školní prezentace</div></div></div>
+            <div class="feature"><div class="ico">📚</div><div><strong>Doučování</strong><div class="small">Matematika, informatika, práce s Office</div></div></div>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="card" role="img" aria-label="Ukázka práce">
+            <div class="illu">
+              <!-- Illustration placeholder (nahradíš vlastním obrázkem) -->
+              <svg width="160" height="120" viewBox="0 0 160 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="0" y="0" width="160" height="120" rx="8" fill="#eaf4ff"/>
+                <g transform="translate(18,18)" fill="none" stroke="#0c4a7b" stroke-width="2">
+                  <rect x="0" y="0" width="124" height="68" rx="6" stroke="#0c4a7b" fill="#fff"/>
+                  <rect x="8" y="10" width="108" height="40" fill="#f7fbff" stroke="none"/>
+                </g>
+              </svg>
+            </div>
+            <div style="margin-top:12px">
+              <strong>Osobní přístup</strong>
+              <p class="small" style="margin:6px 0 0 0">Ukážu dětem, jak pracovat na PC bezpečně a efektivně. Rodiče ocení výsledky.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section class="services" id="services" aria-labelledby="svc-title">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <h3 id="svc-title">Co nabízím</h3>
+          <div class="pill">Lokální & Levné</div>
+        </div>
+
+        <div class="services-grid" style="margin-top:16px">
+          <div class="svc">
+            <h3>Zrychlení & údržba PC</h3>
+            <p class="small">Vyčistím systém, poradím s aktualizacemi, zabezpečením a nastavením pro lepší výkon.</p>
+            <div class="price">Cca 100–250 Kč (podle rozsahu)</div>
+          </div>
+
+          <div class="svc">
+            <h3>Tvorba grafiky</h3>
+            <p class="small">Profilovky, bannery, plakáty a školní prezentace v pěkném stylu.</p>
+            <div class="price">Profilovka 30–80 Kč, banner 50–150 Kč</div>
+          </div>
+
+          <div class="svc">
+            <h3>Doučování</h3>
+            <p class="small">Jednoduché vysvětlení látky, práce s Word/PowerPoint a příprava na školní projekty.</p>
+            <div class="price">80–120 Kč / hod</div>
+          </div>
+        </div>
+
+        <div id="pricing" style="margin-top:20px">
+          <h3>Ceníkové balíčky</h3>
+          <div class="pricing" style="margin-top:10px">
+            <div class="plan">
+              <h4>Základ</h4>
+              <ul>
+                <li>1 hodina doučování / nebo jednoduché zrychlení PC</li>
+                <li>Dodatečná úprava grafiky zdarma (jedna drobnost)</li>
+              </ul>
+              <div class="price">~100 Kč</div>
+            </div>
+            <div class="plan">
+              <h4>Pro</h4>
+              <ul>
+                <li>Mini kurz 4× 45 min (grafika / PC)</li>
+                <li>Vytvoření profilu + 1 banner</li>
+              </ul>
+              <div class="price">~400 Kč</div>
+            </div>
+            <div class="plan">
+              <h4>Komplet</h4>
+              <ul>
+                <li>Čištění PC (softwarové) + 1 hod doučování</li>
+                <li>Vytvoření grafiky pro školní projekt</li>
+              </ul>
+              <div class="price">~550 Kč</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Portfolio -->
+      <section style="padding:28px 0">
+        <h3>Ukázky práce</h3>
+        <div class="portfolio" style="margin-top:12px">
+          <div class="thumb">Profilovka – před</div>
+          <div class="thumb">Banner – před</div>
+          <div class="thumb">Prezentace – před</div>
+        </div>
+        <p class="small" style="margin-top:10px">Pozn.: Nahraď tyto ukázky svými obrázky, až budeš mít.</p>
+      </section>
+
+      <!-- How it works & FAQ -->
+      <section style="padding:18px 0">
+        <div class="how">
+          <div class="steps">
+            <h3>Jak to probíhá</h3>
+            <ol>
+              <li>Napiš mi (e-mail nebo přes rodiče) – domluvíme čas.</li>
+              <li>Řekni, co chceš (zrychlit PC, udělat banner nebo doučování).</li>
+              <li>Provedu úpravy / doučování, ukážu výsledky rodičům.</li>
+            </ol>
+            <p class="small">Vždy ukážu rodičům výsledek — to zvyšuje důvěru a zajišťuje opakovaný byznys.</p>
+          </div>
+
+          <div class="faq">
+            <h3>FAQ</h3>
+            <details><summary>Musím mít IČO / živnost?</summary><p class="small">Ne, za tyto malé služby (na kapesné) obvykle stačí dohoda s rodiči. Pokud budeš mít velký obrat, prober to s rodiči.</p></details>
+            <details><summary>Jak probíhá doučování?</summary><p class="small">Online přes sdílení obrazovky nebo osobně doma (domluvíme).</p></details>
+            <details><summary>Platba?</summary><p class="small">Hotově nebo přes rodiče (dohodneme).</p></details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER / CONTACT -->
+    <footer>
+      <div class="contact-card">
+        <div class="mailbox" aria-hidden="true">✉️</div>
+        <div>
+          <div style="font-weight:700">Kryštof C. – PC Pomocník</div>
+          <div class="small">Kontakt: <a href="mailto:pcpomocnik932@gmail.com">pcpomocnik932@gmail.com</a></div>
+        </div>
+      </div>
+
+      <div style="text-align:right">
+        <div class="copyright">© <span id="yr"></span> Kryštof C. • Všechna práva vyhrazena</div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    // small scripts
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // enhance contact links (optional)
+    // On small devices, open mailto or show alert
+    (function(){
+      // nothing heavy here
+    })();
+  </script>
+</body>
+</html>
